@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <RootNamespace>GoSolve.Dummy.Book.Api.Business</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Services\" />
+    <None Remove="Services\Interfaces\" />
+    <None Remove="Models\" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="MappingProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Services\Interfaces\" />
+    <Folder Include="Models\" />
+    <Folder Include="MappingProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Clients\HttpClients.Dummy.Review\HttpClients.Dummy.Review.csproj" />
+    <ProjectReference Include="..\..\Clients\HttpClients.Dummy.Book\HttpClients.Dummy.Book.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+</Project>
