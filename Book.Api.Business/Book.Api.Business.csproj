@@ -13,6 +13,8 @@
     <None Remove="Models\" />
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
     <None Remove="MappingProfiles\" />
+    <None Remove="GoSolve.HttpClients.Dummy.Book" />
+    <None Remove="GoSolve.HttpClients.Dummy.Review" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
@@ -21,10 +23,8 @@
     <Folder Include="MappingProfiles\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Clients\HttpClients.Dummy.Review\HttpClients.Dummy.Review.csproj" />
-    <ProjectReference Include="..\..\Clients\HttpClients.Dummy.Book\HttpClients.Dummy.Book.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="GoSolve.HttpClients.Dummy.Book" Version="0.0.2" />
+    <PackageReference Include="GoSolve.HttpClients.Dummy.Review" Version="0.0.2" />
   </ItemGroup>
 </Project>
