@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using GoSolve.Dummy.Book.Api.Business.Services.Interfaces;
-using GoSolve.HttpClients.Dummy.Book.Contracts;
 using GoSolve.HttpClients.Dummy.Review;
+using GoSolve.HttpClients.Dummy.Review.Contracts;
 
 namespace GoSolve.Dummy.Book.Api.Business.Services;
 
@@ -23,28 +23,24 @@ public class BookService : IBookService
         _mapper = mapper;
     }
 
-    public async Task<BookResponse> AddBook(BookRequest bookRequest)
+    public Task<Models.Book> AddBook(Models.Book book)
     {
-        var book = _mapper.Map<Models.Book>(bookRequest);
         book.Id = 201;
-        return _mapper.Map<BookResponse>(book);
+        return Task.FromResult(book);
     }
 
-    public async Task<DetailedBookResponse> GetBookById(int bookId)
+    public Task<Models.Book> GetBookById(int bookId)
     {
-        var book = _bookDb.FirstOrDefault(book => book.Id == bookId);
-        if (book == null) return null;
-
-        var bookResponse = _mapper.Map<DetailedBookResponse>(book);
-
-        var reviews = await _reviewHttpClient.GetReviewsForBook(bookId);
-        bookResponse.Reviews = _mapper.Map<IEnumerable<DetailedBookReviewResponse>>(reviews);
-
-        return bookResponse;
+        return Task.FromResult(_bookDb.FirstOrDefault(book => book.Id == bookId));
     }
 
-    public async Task<IEnumerable<BookResponse>> GetBooks()
+    public Task<IEnumerable<Models.Book>> GetBooks()
     {
-        return _mapper.Map<IEnumerable<BookResponse>>(_bookDb.AsEnumerable());
+        return Task.FromResult(_bookDb.AsEnumerable());
+    }
+
+    public async Task<IEnumerable<ReviewResponse>> GetReviewsForBook(int bookId)
+    {
+        return await _reviewHttpClient.GetReviewsForBook(bookId);
     }
 }
