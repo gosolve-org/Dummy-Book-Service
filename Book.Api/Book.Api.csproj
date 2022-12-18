@@ -5,6 +5,7 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>true</ImplicitUsings>
     <RootNamespace>GoSolve.Dummy.Book.Api</RootNamespace>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'api_dummy_book' " />
@@ -20,11 +21,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="GoSolve.Tools.Api" Version="0.0.3">
+    <PackageReference Include="GoSolve.Tools.Api" Version="0.0.6">
       <IncludeAssets>All</IncludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="GoSolve.HttpClients.Dummy.Book" Version="0.0.2" />
+    <PackageReference Include="GoSolve.HttpClients.Dummy.Book" Version="0.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MappingProfiles\" />
