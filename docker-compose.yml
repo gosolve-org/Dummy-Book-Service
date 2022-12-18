@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+  book.api:
+    image: ${DOCKER_REGISTRY-}book-api
+    build:
+      context: .
+      dockerfile: Book.Api/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/local-cert.pem
+    ports:
+      - "80"
+    volumes:
+      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+      - ./certs:/https:ro
+    networks:
+      - gos-net
+    labels:
+      traefik.enable: 'true'
+      traefik.http.routers.book-api-secure.rule: 'PathPrefix(`/book-api`)'
+      traefik.http.routers.book-api-secure.entrypoints: 'https'
+      traefik.http.routers.book-api-secure.tls: 'true'
+      traefik.docker.network: 'gos-net'
+networks:
+  gos-net:
+    external: true
