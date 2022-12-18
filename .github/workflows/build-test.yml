@@ -19,7 +19,7 @@ jobs:
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Add source
-        run: dotnet nuget add source --username USERNAME --password $NUGET_AUTH_TOKEN https://nuget.pkg.github.com/gosolve-org/index.json
+        run: dotnet nuget add source --username USERNAME --password $NUGET_AUTH_TOKEN --store-password-in-clear-text https://nuget.pkg.github.com/gosolve-org/index.json
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Install dependencies
