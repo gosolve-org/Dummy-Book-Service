@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{571B516E-6D8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{033DEF92-C39E-45A4-833C-EC012A91310C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Book.Api.Business", "Book.Api.Business\Book.Api.Business.csproj", "{D91E6520-612C-4751-9EA1-94EF72D4CCA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Book.Business", "Book.Business\Book.Business.csproj", "{D91E6520-612C-4751-9EA1-94EF72D4CCA2}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7D76E722-C18F-4E4A-9FA8-2FAC597CBDE4}"
 EndProject

@@ -1,5 +1,5 @@
-﻿using GoSolve.Dummy.Book.Api.Business.Services;
-using GoSolve.Dummy.Book.Api.Business.Services.Interfaces;
+﻿using GoSolve.Dummy.Book.Business.Services;
+using GoSolve.Dummy.Book.Business.Services.Interfaces;
 using GoSolve.Dummy.Book.Api.MappingProfiles;
 using GoSolve.HttpClients.Dummy.Review;
 using GoSolve.Tools.Api.ExtensionMethods;

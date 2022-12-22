@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using GoSolve.Dummy.Book.Api.Business.Services.Interfaces;
+using GoSolve.Dummy.Book.Business.Services.Interfaces;
 using GoSolve.HttpClients.Dummy.Review;
 using GoSolve.HttpClients.Dummy.Review.Contracts;
 
-namespace GoSolve.Dummy.Book.Api.Business.Services;
+namespace GoSolve.Dummy.Book.Business.Services;
 
 public class BookService : IBookService
 {
