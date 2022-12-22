@@ -1,6 +1,6 @@
 ﻿using GoSolve.HttpClients.Dummy.Review.Contracts;
 
-namespace GoSolve.Dummy.Book.Api.Business.Services.Interfaces;
+namespace GoSolve.Dummy.Book.Business.Services.Interfaces;
 
 public interface IBookService
 {

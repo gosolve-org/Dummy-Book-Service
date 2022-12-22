@@ -16,12 +16,12 @@
     <None Remove="GoSolve.HttpClients.Dummy.Book" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Book.Api.Business\Book.Api.Business.csproj">
+    <ProjectReference Include="..\Book.Business\Book.Business.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="GoSolve.Tools.Api" Version="0.0.6">
+    <PackageReference Include="GoSolve.Tools.Api" Version="0.0.7">
       <IncludeAssets>All</IncludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>

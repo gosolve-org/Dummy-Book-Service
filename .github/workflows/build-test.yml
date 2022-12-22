@@ -22,8 +22,8 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Install dependencies
-        run: dotnet restore api-dummy-book.sln
+        run: dotnet restore dummy-book.sln
       - name: Build
-        run: dotnet build api-dummy-book.sln --configuration Release --no-restore
+        run: dotnet build dummy-book.sln --configuration Release --no-restore
       - name: Test
-        run: dotnet test api-dummy-book.sln --no-restore --verbosity normal --no-build
+        run: dotnet test dummy-book.sln --no-restore --verbosity normal --no-build

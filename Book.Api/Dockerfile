@@ -16,7 +16,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["nuget.config", "."]
 COPY ["Book.Api/Book.Api.csproj", "Book.Api/"]
-COPY ["Book.Api.Business/Book.Api.Business.csproj", "Book.Api.Business/"]
+COPY ["Book.Business/Book.Business.csproj", "Book.Business/"]
 RUN dotnet restore "Book.Api/Book.Api.csproj"
 COPY . .
 WORKDIR "/src/Book.Api"

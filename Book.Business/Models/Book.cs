@@ -1,4 +1,4 @@
-﻿namespace GoSolve.Dummy.Book.Api.Business.Models;
+﻿namespace GoSolve.Dummy.Book.Business.Models;
 
 public class Book
 {
