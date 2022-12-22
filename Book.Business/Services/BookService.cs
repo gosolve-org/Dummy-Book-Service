@@ -41,6 +41,6 @@ public class BookService : IBookService
 
     public async Task<IEnumerable<ReviewResponse>> GetReviewsForBook(int bookId)
     {
-        return await _reviewHttpClient.GetReviewsForBook(bookId);
+        return await _reviewHttpClient.GetForBook(bookId);
     }
 }
