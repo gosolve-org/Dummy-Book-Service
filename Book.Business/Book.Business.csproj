@@ -12,19 +12,20 @@
     <None Remove="Services\Interfaces\" />
     <None Remove="Models\" />
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
-    <None Remove="GoSolve.HttpClients.Dummy.Book" />
     <None Remove="GoSolve.HttpClients.Dummy.Review" />
     <None Remove="GoSolve.Tools.Common" />
+    <None Remove="ExtensionMethods\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
     <Folder Include="Services\Interfaces\" />
     <Folder Include="Models\" />
+    <Folder Include="ExtensionMethods\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="GoSolve.HttpClients.Dummy.Review" Version="0.0.6" />
-    <PackageReference Include="GoSolve.Tools.Common" Version="0.0.5">
+    <PackageReference Include="GoSolve.Tools.Common" Version="0.0.6">
       <IncludeAssets>All</IncludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>

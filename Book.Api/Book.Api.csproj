@@ -14,6 +14,7 @@
     <None Remove="GoSolve.Tools.Api" />
     <None Remove="MappingProfiles\" />
     <None Remove="GoSolve.HttpClients.Dummy.Book" />
+    <None Remove="ExtensionMethods\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Book.Business\Book.Business.csproj">
@@ -21,7 +22,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="GoSolve.Tools.Api" Version="0.0.7">
+    <PackageReference Include="GoSolve.Tools.Api" Version="0.0.10">
       <IncludeAssets>All</IncludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>
@@ -29,5 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MappingProfiles\" />
+    <Folder Include="ExtensionMethods\" />
   </ItemGroup>
 </Project>
