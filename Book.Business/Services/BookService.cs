@@ -1,46 +1,80 @@
 ﻿using AutoMapper;
+using GoSolve.Clients.Dummy.Book.Contracts.Requests;
+using GoSolve.Clients.Dummy.Book.Contracts.Responses;
+using GoSolve.Clients.Dummy.Review.Contracts.Responses;
+using GoSolve.Clients.Dummy.Review.HttpClients.Interfaces;
 using GoSolve.Dummy.Book.Business.Services.Interfaces;
-using GoSolve.HttpClients.Dummy.Review;
-using GoSolve.HttpClients.Dummy.Review.Contracts;
+using GoSolve.Dummy.Book.Data.Repositories.Interfaces;
+using GoSolve.Tools.Common.Database.Models;
+using GoSolve.Tools.Common.Database.Models.Interfaces;
 
 namespace GoSolve.Dummy.Book.Business.Services;
 
 public class BookService : IBookService
 {
     private readonly IReviewHttpClient _reviewHttpClient;
+    private readonly IBookRepository _bookRepository;
+    private readonly IBookGenreRepository _bookGenreRepository;
+    private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    private readonly Models.Book[] _bookDb = new Models.Book[]
-    {
-        new Models.Book { Id = 0, Title = "Book1", AmountOfPages = 360 },
-        new Models.Book { Id = 1, Title = "Book2", AmountOfPages = 500 },
-        new Models.Book { Id = 2, Title = "Book3", AmountOfPages = 180 }
-    };
-
-    public BookService(IReviewHttpClient reviewHttpClient, IMapper mapper)
+    public BookService(
+        IReviewHttpClient reviewHttpClient,
+        IBookRepository bookRepository,
+        IBookGenreRepository bookGenreRepository,
+        IMapper mapper,
+        IUnitOfWork unitOfWork)
     {
         _reviewHttpClient = reviewHttpClient;
+        _bookRepository = bookRepository;
+        _bookGenreRepository = bookGenreRepository;
+        _unitOfWork = unitOfWork;
         _mapper = mapper;
     }
 
-    public Task<Models.Book> AddBook(Models.Book book)
+    public async Task<BookResponse> Add(BookCreationRequest book)
     {
-        book.Id = 201;
-        return Task.FromResult(book);
+        var bookEntity = _mapper.Map<Data.Models.Book>(book);
+        var bookGenre = await _bookGenreRepository.GetById(book.GenreId);
+        if (bookGenre == null)
+        {
+            throw new ArgumentException($"Could not find BookGenre by id {book.GenreId}.");
+        }
+
+        bookEntity.CreatedAt = DateTime.UtcNow;
+        bookEntity.UpdatedAt = DateTime.UtcNow;
+
+        _bookRepository.Add(bookEntity);
+
+        await _unitOfWork.CompleteAsync();
+
+        return _mapper.Map<BookResponse>(bookEntity);
     }
 
-    public Task<Models.Book> GetBookById(int bookId)
+    public async Task<BookResponse> GetById(int id)
     {
-        return Task.FromResult(_bookDb.FirstOrDefault(book => book.Id == bookId));
+        var book = await _bookRepository.GetById(id);
+        if (book == null) return null;
+
+        return _mapper.Map<BookResponse>(book);
     }
 
-    public Task<IEnumerable<Models.Book>> GetBooks()
+    public async Task<IEnumerable<BookResponse>> GetAll()
     {
-        return Task.FromResult(_bookDb.AsEnumerable());
+        var books = await _bookRepository.GetAll();
+
+        return _mapper.Map<IEnumerable<BookResponse>>(books);
     }
 
     public async Task<IEnumerable<ReviewResponse>> GetReviewsForBook(int bookId)
     {
         return await _reviewHttpClient.GetForBook(bookId);
+    }
+
+    public async Task<IEnumerable<BookGenreReponse>> GetGenres()
+    {
+        var bookGenres = await _bookGenreRepository.GetAll();
+
+        return _mapper.Map<IEnumerable<BookGenreReponse>>(bookGenres);
     }
 }

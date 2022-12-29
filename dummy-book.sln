@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Book.Business", "Book.Busin
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7D76E722-C18F-4E4A-9FA8-2FAC597CBDE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Book.Data", "Book.Data\Book.Data.csproj", "{C64D5806-0D02-44BD-842A-2BB72FF623D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{7D76E722-C18F-4E4A-9FA8-2FAC597CBDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D76E722-C18F-4E4A-9FA8-2FAC597CBDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D76E722-C18F-4E4A-9FA8-2FAC597CBDE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C64D5806-0D02-44BD-842A-2BB72FF623D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64D5806-0D02-44BD-842A-2BB72FF623D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64D5806-0D02-44BD-842A-2BB72FF623D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64D5806-0D02-44BD-842A-2BB72FF623D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,5 +53,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4C1225A0-B19F-4FB1-BA95-6BC7A3390C83} = {571B516E-6D89-44BA-9975-F8747EF44F22}
 		{D91E6520-612C-4751-9EA1-94EF72D4CCA2} = {571B516E-6D89-44BA-9975-F8747EF44F22}
+		{C64D5806-0D02-44BD-842A-2BB72FF623D5} = {571B516E-6D89-44BA-9975-F8747EF44F22}
 	EndGlobalSection
 EndGlobal

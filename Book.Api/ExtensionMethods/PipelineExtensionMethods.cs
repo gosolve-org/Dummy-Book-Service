@@ -1,6 +1,8 @@
-﻿using GoSolve.Dummy.Book.Api.MappingProfiles;
+﻿using GoSolve.Clients.Dummy.Review.HttpClients;
+using GoSolve.Clients.Dummy.Review.HttpClients.Interfaces;
+using GoSolve.Dummy.Book.Api.MappingProfiles;
 using GoSolve.Dummy.Book.Business.ExtensionMethods;
-using GoSolve.HttpClients.Dummy.Review;
+using GoSolve.Dummy.Book.Data;
 using GoSolve.Tools.Api.ExtensionMethods;
 using GoSolve.Tools.Common.HttpClients;
 
@@ -23,6 +25,7 @@ public static class PipelineExtensionMethods
     public static WebApplication UseApiLayer(this WebApplication app)
     {
         app.UseApiTools();
+        app.MigrateDatabase<BookDbContext>();
 
         return app;
     }

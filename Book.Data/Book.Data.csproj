@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <RootNamespace>GoSolve.Dummy.Book.Data</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="GoSolve.Tools.Common" />
+    <None Remove="Models\" />
+    <None Remove="Repositories\" />
+    <None Remove="Repositories\Interfaces\" />
+    <None Remove="ExtensionMethods\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="GoSolve.Tools.Common" Version="0.0.11">
+      <IncludeAssets>All</IncludeAssets>
+      <PrivateAssets>None</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Interfaces\" />
+    <Folder Include="ExtensionMethods\" />
+  </ItemGroup>
+</Project>
