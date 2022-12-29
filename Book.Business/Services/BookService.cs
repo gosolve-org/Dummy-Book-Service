@@ -41,9 +41,6 @@ public class BookService : IBookService
             throw new ArgumentException($"Could not find BookGenre by id {book.GenreId}.");
         }
 
-        bookEntity.CreatedAt = DateTime.UtcNow;
-        bookEntity.UpdatedAt = DateTime.UtcNow;
-
         _bookRepository.Add(bookEntity);
 
         await _unitOfWork.CompleteAsync();
