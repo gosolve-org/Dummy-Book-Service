@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GoSolve.Dummy.Book.Data.Migrations
 {
     [DbContext(typeof(BookDbContext))]
-    [Migration("20221229211541_FixBookGenreRelation")]
-    partial class FixBookGenreRelation
+    [Migration("20221230210946_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,11 +26,11 @@ namespace GoSolve.Dummy.Book.Data.Migrations
 
             modelBuilder.Entity("GoSolve.Dummy.Book.Data.Models.Book", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                        .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<int>("AmountOfPages")
                         .HasColumnType("integer");
@@ -82,42 +82,42 @@ namespace GoSolve.Dummy.Book.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2022, 12, 30, 21, 9, 46, 807, DateTimeKind.Utc).AddTicks(7020),
                             Description = "Narrative storytelling with imaginary characters and events.",
                             Name = "Fiction",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            UpdatedAt = new DateTime(2022, 12, 30, 21, 9, 46, 807, DateTimeKind.Utc).AddTicks(7020)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2022, 12, 30, 21, 9, 46, 807, DateTimeKind.Utc).AddTicks(7020),
                             Description = "Narrative storytelling based on real events and factual information.",
                             Name = "Non-fiction",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            UpdatedAt = new DateTime(2022, 12, 30, 21, 9, 46, 807, DateTimeKind.Utc).AddTicks(7020)
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2022, 12, 30, 21, 9, 46, 807, DateTimeKind.Utc).AddTicks(7020),
                             Description = "Narrative storytelling involving a crime or puzzle to be solved.",
                             Name = "Mystery",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            UpdatedAt = new DateTime(2022, 12, 30, 21, 9, 46, 807, DateTimeKind.Utc).AddTicks(7020)
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2022, 12, 30, 21, 9, 46, 807, DateTimeKind.Utc).AddTicks(7020),
                             Description = "Narrative storytelling centered on the romantic relationships of the characters.",
                             Name = "Romance",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            UpdatedAt = new DateTime(2022, 12, 30, 21, 9, 46, 807, DateTimeKind.Utc).AddTicks(7020)
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedAt = new DateTime(2022, 12, 30, 21, 9, 46, 807, DateTimeKind.Utc).AddTicks(7020),
                             Description = "Narrative storytelling set in the future or in an alternative reality and involving scientific or technological elements.",
                             Name = "Science fiction",
-                            UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            UpdatedAt = new DateTime(2022, 12, 30, 21, 9, 46, 807, DateTimeKind.Utc).AddTicks(7020)
                         });
                 });
 

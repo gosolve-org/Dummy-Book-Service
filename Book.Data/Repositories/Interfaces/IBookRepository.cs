@@ -2,6 +2,6 @@
 
 namespace GoSolve.Dummy.Book.Data.Repositories.Interfaces;
 
-public interface IBookRepository : IGenericRepository<Models.Book, int>
+public interface IBookRepository : IGenericRepository<Models.Book, long>
 {
 }

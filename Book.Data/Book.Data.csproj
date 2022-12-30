@@ -13,9 +13,11 @@
     <None Remove="Repositories\" />
     <None Remove="Repositories\Interfaces\" />
     <None Remove="ExtensionMethods\" />
+    <None Remove="Seeders\" />
+    <None Remove="Seeders\TestDataSeeders\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="GoSolve.Tools.Common" Version="0.0.11">
+    <PackageReference Include="GoSolve.Tools.Common" Version="0.0.13">
       <IncludeAssets>All</IncludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>
@@ -25,5 +27,7 @@
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\Interfaces\" />
     <Folder Include="ExtensionMethods\" />
+    <Folder Include="Seeders\" />
+    <Folder Include="Seeders\TestDataSeeders\" />
   </ItemGroup>
 </Project>

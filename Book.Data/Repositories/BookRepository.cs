@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Query;
 
 namespace GoSolve.Dummy.Book.Data.Repositories;
 
-public class BookRepository : GenericRepository<Models.Book, int, BookDbContext>, IBookRepository
+public class BookRepository : GenericRepository<Models.Book, long, BookDbContext>, IBookRepository
 {
     public BookRepository(BookDbContext context)
         : base(context)

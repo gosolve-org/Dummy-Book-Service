@@ -2,7 +2,7 @@
 
 namespace GoSolve.Dummy.Book.Data.Models;
 
-public class Book : BaseEntity<int>
+public class Book : BaseEntity<long>
 {
     public string Title { get; set; }
     public int AmountOfPages { get; set; }
