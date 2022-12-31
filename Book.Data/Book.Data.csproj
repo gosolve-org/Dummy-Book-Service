@@ -17,7 +17,7 @@
     <None Remove="Seeders\TestDataSeeders\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="GoSolve.Tools.Common" Version="0.0.13">
+    <PackageReference Include="GoSolve.Tools.Common" Version="0.0.14">
       <IncludeAssets>All</IncludeAssets>
       <PrivateAssets>None</PrivateAssets>
     </PackageReference>
