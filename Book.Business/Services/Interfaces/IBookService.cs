@@ -1,14 +1,18 @@
-﻿using GoSolve.HttpClients.Dummy.Review.Contracts;
+﻿using GoSolve.Clients.Dummy.Book.Contracts.Requests;
+using GoSolve.Clients.Dummy.Book.Contracts.Responses;
+using GoSolve.Clients.Dummy.Review.Contracts.Responses;
 
 namespace GoSolve.Dummy.Book.Business.Services.Interfaces;
 
 public interface IBookService
 {
-    Task<Models.Book> GetBookById(int bookId);
+    Task<BookResponse> GetById(int id);
 
     Task<IEnumerable<ReviewResponse>> GetReviewsForBook(int bookId);
 
-    Task<IEnumerable<Models.Book>> GetBooks();
+    Task<IEnumerable<BookResponse>> GetAll();
 
-    Task<Models.Book> AddBook(Models.Book bookRequest);
+    Task<BookResponse> Add(BookCreationRequest bookRequest);
+
+    Task<IEnumerable<BookGenreReponse>> GetGenres();
 }
